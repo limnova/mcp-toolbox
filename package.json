@@ -1,0 +1,14 @@
+{
+  "name": "mcp-toolbox",
+  "version": "1.0.0",
+  "description": "Personal MCP server / Claude Skill installer, config-only (no secrets committed).",
+  "type": "module",
+  "bin": {
+    "mcpt": "./install.mjs"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/limnova/mcp-toolbox.git"
+  }
+}

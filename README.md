@@ -10,21 +10,42 @@ skills/<id>/          每个 Skill 一个文件夹，标准 SKILL.md 格式
 install.mjs           安装脚本（零依赖，纯 Node.js，跨 Windows/PowerShell/Git Bash）
 ```
 
+## 安装
+
+不发布到 npm 官方注册表，直接从 GitHub 装，不需要登录 npm：
+
+```bash
+# 全局装一次，得到 mcpt 命令
+npm install -g github:limnova/mcp-toolbox
+
+# 或者不装，每次直接用 npx 跑（会用缓存，比较快）
+npx github:limnova/mcp-toolbox list
+```
+
+也可以本地 clone 后用 `node install.mjs` 代替 `mcpt`，两者等价：
+
+```bash
+git clone https://github.com/limnova/mcp-toolbox.git
+node mcp-toolbox/install.mjs list
+```
+
 ## 用法
+
+在**目标项目**的目录下运行（装到当前目录，不是 toolbox 自己的目录）：
 
 ```bash
 # 看看仓库里有什么
-node install.mjs list
+mcpt list
 
 # 交互式选装（不带参数会依次询问要装哪些 MCP / skill / 装到哪）
-node install.mjs add
+mcpt add
 
 # 非交互，直接指定（支持单独选几个，不是全装）
-node install.mjs add --mcp filesystem --target claude
-node install.mjs add --mcp filesystem,example-with-secret --skill commit-message --target both
+mcpt add --mcp filesystem --target claude
+mcpt add --mcp filesystem,example-with-secret --skill commit-message --target both
 
 # 已存在同名配置默认跳过，加 --force 覆盖
-node install.mjs add --mcp filesystem --target claude --force
+mcpt add --mcp filesystem --target claude --force
 ```
 
 - `--target claude`：写入**当前目录**的 `.mcp.json`（项目级，不影响其他项目）。
