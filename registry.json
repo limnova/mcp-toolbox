@@ -19,6 +19,42 @@
       "tags": ["tapd", "project-management"]
     },
     {
+      "id": "glab",
+      "name": "GitLab CLI (glab)",
+      "description": "GitLab MR/Issue/Pipeline 等操作，通过 `glab mcp serve` 启动。鉴权用 glab 自己的登录态（先跑一次 `glab auth login`），不需要额外环境变量，前提是本机装了 glab 且在 PATH 里。",
+      "command": "glab",
+      "args": ["mcp", "serve"],
+      "envVars": [],
+      "tags": ["gitlab"]
+    },
+    {
+      "id": "github",
+      "name": "GitHub (github-mcp-server)",
+      "description": "GitHub 仓库/Issue/PR 操作，官方 github-mcp-server 二进制，stdio 启动。没配置 env 时会自动读本机 gh CLI 的登录态（先跑一次 `gh auth login`），前提是 github-mcp-server 在 PATH 里。",
+      "command": "github-mcp-server",
+      "args": ["stdio"],
+      "envVars": [],
+      "tags": ["github"]
+    },
+    {
+      "id": "context7",
+      "name": "Context7",
+      "description": "查最新版第三方库/框架文档的 MCP（避免用过时的训练数据）。基础用法不需要密钥。",
+      "command": "npx",
+      "args": ["-y", "@upstash/context7-mcp"],
+      "envVars": [],
+      "tags": ["docs"]
+    },
+    {
+      "id": "figma-framelink",
+      "name": "Figma (Framelink)",
+      "description": "读取 Figma 设计稿节点/样式的 MCP。需要 Figma 个人访问令牌。",
+      "command": "npx",
+      "args": ["-y", "figma-developer-mcp", "--figma-api-key=${FIGMA_API_KEY}", "--stdio"],
+      "envVars": ["FIGMA_API_KEY"],
+      "tags": ["figma", "design"]
+    },
+    {
       "id": "example-with-secret",
       "name": "示例：带密钥的 MCP（模板，请替换）",
       "description": "演示如何登记一个需要密钥的 MCP：command/args 换成真实的 server，envVars 填真实需要的变量名。密钥本身不会出现在这个仓库里，只会出现在你本机的环境变量里。",
