@@ -1,0 +1,30 @@
+{
+  "mcpServers": [
+    {
+      "id": "filesystem",
+      "name": "Filesystem",
+      "description": "读写本地文件系统的官方参考 MCP server，不需要任何密钥。",
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-filesystem", "."],
+      "envVars": [],
+      "tags": ["official", "files"]
+    },
+    {
+      "id": "example-with-secret",
+      "name": "示例：带密钥的 MCP（模板，请替换）",
+      "description": "演示如何登记一个需要密钥的 MCP：command/args 换成真实的 server，envVars 填真实需要的变量名。密钥本身不会出现在这个仓库里，只会出现在你本机的环境变量里。",
+      "command": "npx",
+      "args": ["-y", "@example/mcp-server"],
+      "envVars": ["EXAMPLE_API_KEY"],
+      "tags": ["template"]
+    }
+  ],
+  "skills": [
+    {
+      "id": "commit-message",
+      "name": "commit-message",
+      "description": "根据 git diff 生成规范的提交信息（示例 skill，演示目录结构）。",
+      "path": "skills/commit-message"
+    }
+  ]
+}
