@@ -10,6 +10,15 @@
       "tags": ["official", "files"]
     },
     {
+      "id": "tapd",
+      "name": "TAPD",
+      "description": "TAPD 项目管理（需求/缺陷/迭代/测试用例/Wiki/日报周报等）的 MCP server，通过 uvx 启动，需要本机装了 uv。",
+      "command": "uvx",
+      "args": ["mcp-server-tapd"],
+      "envVars": ["TAPD_API_BASE_URL", "TAPD_BASE_URL"],
+      "tags": ["tapd", "project-management"]
+    },
+    {
       "id": "example-with-secret",
       "name": "示例：带密钥的 MCP（模板，请替换）",
       "description": "演示如何登记一个需要密钥的 MCP：command/args 换成真实的 server，envVars 填真实需要的变量名。密钥本身不会出现在这个仓库里，只会出现在你本机的环境变量里。",
